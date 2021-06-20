@@ -1,28 +1,91 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <header-aurora />
+    <main-aurora />
+    <footer-aurora />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HeaderAurora from "./components/HeaderAurora";
+import MainAurora from "./components/MainAurora.vue";
+import FooterAurora from "./components/FooterAurora.vue";
 
 export default {
-  name: 'App',
+  name: "App",
+
   components: {
-    HelloWorld
-  }
-}
+    HeaderAurora,
+    MainAurora,
+    FooterAurora
+  },
+};
 </script>
 
-<style>
+<style lang="scss">
+
+@keyframes pulse {
+  0% { 
+    box-shadow: 0 0 0 0 #E1E0E1; 
+  }
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+    box-sizing: border-box;
+    font-family: "Poppins";
+    font-style: normal;
+    .d-flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      &.scrolled {
+        .v-label {
+          color: #000000 !important;
+        }
+        .theme--dark.v-icon {
+          color: #000000;
+        }
+      }
+    }
+    li {
+      list-style: none;
+    }
+    .on-hover {
+      animation: pulse 1s;
+      box-shadow: 0 0 0 1em rgba(#fff,0);
+    }
+  }
+.v-label {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 16px !important;
+    letter-spacing: 0.8px !important;
+    color: #FFFFFF !important;
+}
+.main-container {
+  .v-label {
+    color: #4A4A4A !important;
+    font-weight: 400;
+  }
+}
+input[type=search], input[type=email] {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11px;
+}
+.v-text-field--outlined {
+    fieldset {
+      border: 1px solid #E1E0E1;
+  }
+}
+.v-btn__content {
+    font-family: "Poppins";
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 </style>

@@ -6,8 +6,15 @@
                 <div v-if="category.header !== 'Social'">
                     <p class="category-item" v-for="item in category.items" :key="item">{{ item }}</p>
                 </div>
-                <div v-else>
-                    <v-icon class="category-item" v-for="item in category.items" :key="item">mdi-{{ item }}</v-icon>
+                <div v-else class="d-flex">
+                    <v-icon 
+                        small 
+                        class="category-item" 
+                        v-for="item in category.items" 
+                        :key="item"
+                        :color="'#000000'"
+                        dark
+                    >${{ item }}</v-icon>
                 </div>
             </li>
         </ul>
@@ -55,6 +62,21 @@ export default {
                         display: flex;
                         flex-direction: column;
                         justify-content: space-between;
+                        .d-flex {
+                            width: 140px;
+                        }
+                        &:last-of-type {
+                            justify-content: flex-start;
+                            .category-items-header {
+                                margin-bottom: 17px;
+                            }
+                            .category-item {
+                                margin-bottom: 0;
+                                &:last-of-type {
+                                    font-size: 18px !important;
+                                }
+                            }
+                        }
                     }
                 }
                 &-item {

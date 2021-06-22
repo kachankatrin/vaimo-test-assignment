@@ -42,8 +42,10 @@ export default {
         .v-label {
           color: #000000 !important;
         }
-        .theme--dark.v-icon {
-          color: #000000;
+        .theme--dark{
+          &.v-icon {
+            color: #000000;
+          }
         }
       }
     }
@@ -54,7 +56,7 @@ export default {
       animation: pulse 1s;
       box-shadow: 0 0 0 1em rgba(#fff,0);
     }
-  }
+}
 .v-label {
     font-family: "Poppins";
     font-style: normal;
@@ -63,6 +65,25 @@ export default {
     line-height: 16px !important;
     letter-spacing: 0.8px !important;
     color: #FFFFFF !important;
+}
+.header-container-active {
+  .v-label {
+    color: #000000 !important;
+  }
+  .v-slide-group__content {
+      background: #FFFFFF;
+  }
+  .scrolled {
+    .v-slide-group__content {
+      background: transparent;
+    }
+  }
+  .theme--light{
+          &.v-icon {
+            color: #000000;
+          }
+        }
+
 }
 .main-container {
   .v-label {

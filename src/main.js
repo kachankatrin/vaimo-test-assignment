@@ -7,7 +7,6 @@ Vue.config.productionTip = false;
 Vue.directive("scroll", {
   inserted: function (el, binding) {
     let f = function (evt) {
-      console.log(el, binding, evt)
       if (binding.value(evt, el)) {
         window.removeEventListener("scroll", f)
       }

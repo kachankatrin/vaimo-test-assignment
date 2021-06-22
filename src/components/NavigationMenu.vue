@@ -62,43 +62,15 @@ export default {
         isHeaderActive: {
             type: Boolean,
             required: true
+        },
+        tabs: {
+            type: Array,
+            required: true
         }
     },
     data: () => ({
         tab: null,
         isVisible: false,
-        tabs: [ 
-            { name: "what’s new", tabsItems: [ 
-                { name: "women", notLast: true },
-                { name: "kids", notLast: true },
-                { name: "beauty", notLast: false }, 
-            ] }, 
-            { name: "women", tabsItems: [ 
-                { name: "clothing", items: [ { name: "T-shirts", notLast: true }, { name: "Sweatshirts", notLast: true }, { name: "Knitwear", notLast: true }, { name: "Jeans", notLast: true }, { name: "Jumpsuits", notLast: true }, { name: "Skirts", notLast: true }, { name: "Dresses", notLast: false } ], isOpen: false, notLast: true },
-                { name: "collections", items: [ { name: "Spring", notLast: true }, { name: "Summer", notLast: true }, { name: "Autumn", notLast: true }, { name: "Winter", notLast: false } ], isOpen: false, notLast: true },
-                { name: "collabs", isOpen: false, notLast: true },
-                { name: "brands", items: [ { name: "Zara", notLast: true }, { name: "Next", notLast: true }, {name: "Chanel", notLast: false } ], isOpen: false, notLast: false }
-            ] }, 
-            { name: "accessories", tabsItems: [ 
-                { name: "winter accessories", items: [ { name: "Winter caps", notLast: true }, { name: "Gloves", notLast: true }, { name: "Scarfs", notLast: false } ], isOpen: false, notLast: true },
-                { name: "summer accessories", items: [ { name: "Hats", notLast: true }, { name: "Scrunchies", notLast: true }, { name: "Sunglasses", notLast: false } ], isOpen: false, notLast: false } 
-            ] }, 
-            { name: "kids", tabsItems: [ 
-                { name: "newborns", items: [ { name: "T-shirts", notLast: true }, { name: "Sweatshirts", notLast: true }, { name: "Knitwear", notLast: true }, { name: "Jeans", notLast: true }, { name: "Jumpsuits", notLast: true }, { name: "Skirts", notLast: true }, { name: "Dresses", notLast: false }], isOpen: false, notLast: true },
-                { name: "toddlers", items: [ { name: "T-shirts", notLast: true }, { name: "Sweatshirts", notLast: true }, { name: "Knitwear", notLast: true }, { name: "Jeans", notLast: true }, { name: "Jumpsuits", notLast: true }, { name: "Skirts", notLast: true }, { name: "Dresses", notLast: false }], isOpen: false, notLast: true },
-                { name: "kids", items: [ { name: "T-shirts", notLast: true }, { name: "Sweatshirts", notLast: true }, { name: "Knitwear", notLast: true }, { name: "Jeans", notLast: true }, { name: "Jumpsuits", notLast: true }, { name: "Skirts", notLast: true }, { name: "Dresses", notLast: false }], isOpen: false, notLast: false }
-            ] }, 
-            { name: "beauty", tabsItems: [ 
-                { name: "body", items: [ {name: "Creams", notLast: true}, {name: "Masks", notLast: true}, {name: "Shower Gels", notLast: false} ], isOpen: false, notLast: true },
-                { name: "face", items: [ {name: "Creams", notLast: true}, {name: "Masks", notLast: true}, {name: "Tonners", notLast: false} ], isOpen: false, notLast: true },
-                { name: "hairs", items: [ {name: "Shampoos", notLast: true}, {name: "Masks", notLast: true}, {name: "Conditioners", notLast: false} ], isOpen: false, notLast: false },
-            ] }, 
-            { name: "outlet", tabsItems: [ 
-                { name: "Sale up to 30%", isOpen: false, notLast: true },
-                { name: "Sale up to 70%", isOpen: false, notLast: false }
-                ] }, 
-            { name: "stories", tabsItems: [] }
-        ]
     }),
     computed: {
         chevronColor() {

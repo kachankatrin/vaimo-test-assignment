@@ -42,11 +42,17 @@ export default {
 <style lang="scss" scoped>
 
 @import "../scss/variables.scss";
+@import "../scss/mixins.scss";
 
 .main {
     &-container {
         width: 439px;
         margin: 32px auto;
+        @include xs-block() {
+            width: 100%;
+            margin: 24px auto;
+            padding: 0 16px;
+        }
     }
     &-paragraph {
         font-weight: 500;
@@ -59,6 +65,9 @@ export default {
     &-email {
         mix-blend-mode: normal;
         width: 334px;
+        @include xs-block() {
+            width: 224px;
+        }
         &.v-input {
             flex: unset;
         }

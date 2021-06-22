@@ -22,7 +22,8 @@ export default new Vuetify({
             youtube: "fab fa-youtube",
             shopping: shoppingBag,
             locationPin: "fas fa-map-marker-alt",
-            magnify: magnifySvg
+            magnify: magnifySvg,
+            menu: "fas fa-bars"
         }
       }
 });

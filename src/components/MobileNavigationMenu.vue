@@ -208,6 +208,7 @@ export default {
         },
         toggleHeader() {
             this.$emit("onToggle");
+            this.drawer = false;
         }
     }
 }
@@ -231,6 +232,13 @@ export default {
     }
     &-search {
         pointer-events: all;
+    }
+    &-container {
+        &-active {
+            .header-logo-title {
+                color: #333333;
+            }
+        }
     }
 }
 .btn-menu--open, .btn-search--open {

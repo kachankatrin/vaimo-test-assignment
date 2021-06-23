@@ -46,7 +46,7 @@ export default {
           color: #000000 !important;
         }
         .theme--dark{
-          &.v-icon {
+          &.v-icon:not(.header-container-active .d-flex.scrolled .theme--dark.v-icon) {
             color: #000000;
           }
         }

@@ -91,6 +91,7 @@ export default {
         isScrolledToBreakpoint: false,
         isSearchVisible: null,
         isClicked: false,
+        isMobile: null,
         tabs: [ 
             { 
                 name: "what’s new",
@@ -282,6 +283,14 @@ export default {
                 ? "rgba(247, 247, 247, 0.24)" : "rgba(247, 247, 247, 1)" : "rgba(247, 247, 247, 0.24)"
         }
     },
+    created() {
+        this.isSearchVisible = this.window.width > 480 ? true : false;
+        this.isMobile = this.window.width > 480 ? false : true;
+    },
+    updated() {
+        this.isSearchVisible = this.window.width < 480 ? this.isClicked ? true : false : true;
+        this.isMobile = this.window.width > 480 ? false : true;
+    },
     methods: {
         handleScroll: function () {
             if (window.scrollY > this.scrollBreakPoint) {
@@ -310,12 +319,6 @@ export default {
             this.isClicked = !this.isClicked;
             this.isSearchVisible = !this.isSearchVisible;
         }
-    },
-    created() {
-        this.isSearchVisible = this.window.width > 480 ? true : false;
-    },
-    updated() {
-        this.isSearchVisible = this.window.width < 480 ? this.isClicked ? true : false : true;
     }
 }
 </script>
@@ -564,6 +567,24 @@ export default {
                 .app-bar--custom {
                     background-color: #FFFFFF !important;
                 }
+            }
+        }
+    }
+}
+.header-container-active {
+    .d-flex {
+        &--column {
+            &.mobile-nav {
+                &.scrolled {
+                    .app-bar--custom {
+                        background-color: transparent !important;
+                    }
+                }
+            }
+        }
+        &.scrolled {
+            .header-logo-title {
+                color: #FFFFFF;
             }
         }
     }

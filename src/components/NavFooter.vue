@@ -20,7 +20,8 @@ export default {
     name: "NavFooter",
     methods: {
         toggleHeader() {
-            this.$emit("toggled")
+            console.log("toggle")
+            this.$emit("toggled");
         }
     }
 }
@@ -29,7 +30,7 @@ export default {
 <style lang="scss" scoped>
 .nav {
     &-list-item-title-footer {
-        font-size: 10px;
+        font-size: 10px !important;
         &:not(:last-of-type) {
             height: 48px;
             background: #F7F7F7;
